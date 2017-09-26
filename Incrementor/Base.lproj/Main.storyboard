@@ -1,26 +1,91 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Incrementor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-10" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="udI-2g-V2N">
+                                <rect key="frame" x="113" y="369.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rhp-qG-yur"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCm-VA-hup">
+                                <rect key="frame" x="32" y="30" width="256" height="114"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="96" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sWh-Qd-u7L">
+                                <rect key="frame" x="80" y="311" width="160" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="qnm-Bw-N0n">
+                                <rect key="frame" x="160" y="154" width="0.0" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="UeY-o2-vEg">
+                                <rect key="frame" x="129.5" y="216" width="61" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="sWh-Qd-u7L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.3" id="1pq-Wq-uPD"/>
+                            <constraint firstItem="qnm-Bw-N0n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AcQ-gA-Hyd"/>
+                            <constraint firstItem="UeY-o2-vEg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BNC-0a-9Gm"/>
+                            <constraint firstItem="LCm-VA-hup" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="GeV-5N-8hd"/>
+                            <constraint firstItem="udI-2g-V2N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MUs-fe-ePd"/>
+                            <constraint firstItem="qnm-Bw-N0n" firstAttribute="top" secondItem="LCm-VA-hup" secondAttribute="bottom" constant="10" id="Ouv-AA-okQ"/>
+                            <constraint firstItem="UeY-o2-vEg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QcQ-Gf-KQd"/>
+                            <constraint firstItem="LCm-VA-hup" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TDa-lP-x4B"/>
+                            <constraint firstItem="udI-2g-V2N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="Yif-CP-oK0"/>
+                            <constraint firstItem="LCm-VA-hup" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="dEN-cE-gYi"/>
+                            <constraint firstItem="sWh-Qd-u7L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gaA-CQ-LX1"/>
+                            <constraint firstItem="qnm-Bw-N0n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.75" id="piB-ms-5hc"/>
+                            <constraint firstItem="UeY-o2-vEg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="pxZ-iO-5pW"/>
+                            <constraint firstItem="UeY-o2-vEg" firstAttribute="top" secondItem="qnm-Bw-N0n" secondAttribute="bottom" constant="10" id="sQo-sV-4Sd"/>
+                            <constraint firstItem="sWh-Qd-u7L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="y37-Oj-zd2"/>
+                            <constraint firstItem="LCm-VA-hup" firstAttribute="height" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="ySs-x8-l6X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="congratsLabel" destination="LCm-VA-hup" id="6xX-Hf-m7E"/>
+                        <outlet property="countLabel" destination="UeY-o2-vEg" id="TQi-ME-ICm"/>
+                        <outlet property="emojiLabel" destination="qnm-Bw-N0n" id="cIj-qS-bER"/>
+                        <outlet property="progressBar" destination="sWh-Qd-u7L" id="jDd-Bw-hWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="95.625" y="23.75"/>
         </scene>
     </scenes>
 </document>
